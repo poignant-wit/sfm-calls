@@ -1,6 +1,6 @@
 <?php
 
-namespace Calls\Http\Middleware;
+namespace SFMCalls\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

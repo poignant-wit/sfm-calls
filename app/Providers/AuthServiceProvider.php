@@ -1,6 +1,6 @@
 <?php
 
-namespace Calls\Providers;
+namespace SFMCalls\Providers;
 
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'Calls\Model' => 'Calls\Policies\ModelPolicy',
+        'SFMCalls\Model' => 'SFMCalls\Policies\ModelPolicy',
     ];
 
     /**

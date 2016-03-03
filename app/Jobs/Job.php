@@ -1,6 +1,6 @@
 <?php
 
-namespace Calls\Jobs;
+namespace SFMCalls\Jobs;
 
 use Illuminate\Bus\Queueable;
 

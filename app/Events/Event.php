@@ -1,6 +1,6 @@
 <?php
 
-namespace Calls\Events;
+namespace SFMCalls\Events;
 
 abstract class Event
 {

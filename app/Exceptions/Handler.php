@@ -1,6 +1,6 @@
 <?php
 
-namespace Calls\Exceptions;
+namespace SFMCalls\Exceptions;
 
 use Exception;
 use Illuminate\Validation\ValidationException;

@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +29,26 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['web']], function () {
     //
+
+    Route::get('/', [
+        'uses' => 'HomeController@index',
+        'as' => 'home'
+    ]);
+
+    Route::get('/signup', [
+        'uses' => 'AuthController@getSignup',
+        'as' => 'auth.signup'
+    ]);
+
+    Route::post('/signup', [
+        'uses' => 'AuthController@postSignup'
+    ]);
+
+    Route::get('/alert', function(){
+        return redirect()->route('home')->with('info', 'Вы вошли');
+    });
+
+
+
+
 });

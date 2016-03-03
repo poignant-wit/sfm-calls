@@ -1,6 +1,6 @@
 <?php
 
-namespace Calls\Providers;
+namespace SFMCalls\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -14,7 +14,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'Calls\Http\Controllers';
+    protected $namespace = 'SFMCalls\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.

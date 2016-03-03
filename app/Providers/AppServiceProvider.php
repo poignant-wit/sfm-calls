@@ -1,6 +1,6 @@
 <?php
 
-namespace Calls\Providers;
+namespace SFMCalls\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

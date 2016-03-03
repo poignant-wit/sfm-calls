@@ -21,7 +21,7 @@
             "database"
         ],
         "psr-4": {
-            "Calls\\": "app/"
+            "SFMCalls\\": "app/"
         }
     },
     "autoload-dev": {
