@@ -30,6 +30,7 @@
 Route::group(['middleware' => ['web']], function () {
     //
 
+
     Route::get('/', [
         'uses' => 'HomeController@index',
         'as' => 'home'
@@ -37,18 +38,33 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/signup', [
         'uses' => 'AuthController@getSignup',
-        'as' => 'auth.signup'
+        'as' => 'auth.signup',
+        'middleware' => ['guest'],
     ]);
 
     Route::post('/signup', [
-        'uses' => 'AuthController@postSignup'
+        'uses' => 'AuthController@postSignup',
+        'middleware' => ['guest'],
     ]);
 
-    Route::get('/alert', function(){
-        return redirect()->route('home')->with('info', 'Вы вошли');
-    });
+    Route::get('/signin', [
+        'uses' => 'AuthController@getSignin',
+        'as' => 'auth.signin',
+        'middleware' => ['guest'],
+    ]);
 
+    Route::post('/signin', [
+        'uses' => 'AuthController@postSignin',
+        'middleware' => ['guest'],
+    ]);
 
+    Route::get('/signout', [
+        'uses' => 'AuthController@getSignout',
+        'as' => 'auth.signout'
+    ]);
 
 
 });
+
+
+

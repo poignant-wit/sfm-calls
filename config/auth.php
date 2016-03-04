@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => SFMCalls\User::class,
+            'model' => SFMCalls\Models\User::class,
         ],
 
         // 'users' => [

@@ -4,9 +4,9 @@ namespace SFMCalls\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Contracts\Auth\Authenticatable as AutenticableContract;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 
-class User extends Model implements AutenticableContract
+class User extends Model implements AuthenticatableContract
 {
     use \Illuminate\Auth\Authenticatable;
 
