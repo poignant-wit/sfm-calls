@@ -63,6 +63,21 @@ Route::group(['middleware' => ['web']], function () {
         'as' => 'auth.signout'
     ]);
 
+    Route::get('/order', [
+        'uses' => 'OrderController@getCreateOrder',
+        'as' => 'order.create',
+         'middleware' => ['auth'],
+    ]);
+
+    Route::post('/order', [
+        'uses' => 'OrderController@postCreateOrder',
+        'as' => 'order.create',
+        'middleware' => ['auth'],
+    ]);
+
+
+
+
 
 });
 

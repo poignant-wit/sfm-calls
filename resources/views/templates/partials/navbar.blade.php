@@ -17,7 +17,7 @@
             @if(Auth::check())
                 <ul class="nav navbar-nav navbar-left">
 
-                    <li><a href="">Новый заказ</a></li>
+                    <li><a href="{{ route('order.create') }}">Новый заказ</a></li>
                     </ul>
             @endif
 

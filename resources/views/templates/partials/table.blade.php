@@ -3,21 +3,21 @@
 <div class="panel-body">
 
 
-        <ul class="nav nav-pills" style="display: flex; justify-content:center">
-            <li class="active"><a href="javascript:void(0)">Все</a></li>
-            <li><a href="">Невыполненные</a></li>
-            <li><a href="">Нет ответа</a></li>
-            <li><a href="">Невыполненные</a></li>
+        {{--<ul class="nav nav-pills" style="display: flex; justify-content:center">--}}
+            {{--<li class="active"><a href="javascript:void(0)">Все</a></li>--}}
+            {{--<li><a href="">Невыполненные</a></li>--}}
+            {{--<li><a href="">Нет ответа</a></li>--}}
+            {{--<li><a href="">Невыполненные</a></li>--}}
 
 
-        </ul>
-
-
-
+        {{--</ul>--}}
 
 
 
-<table class="table">
+
+
+
+<table class="table table-hover">
     <thead>
     <tr>
         <th>#</th>
@@ -41,15 +41,15 @@
         </td>
         <td>Otto</td>
         <td>
-            <span class="label label-primary">Выполнен</span>
-            <a href=""><span class="label label-warning">Отправлен вопрос в почту</span></a>
+            <span class="label label-primary">Получен ответ</span>
+
         </td>
     </tr>
-    <tr>
+    <tr style="opacity: .3;">
         <th scope="row">2</th>
         <td>Jacob</td>
         <td>Thornton</td>
-        <td>@fat</td>
+        <td><span class="label label-primary">Выполнен</span></td>
     </tr>
     <tr >
         <th scope="row" >3</th>
