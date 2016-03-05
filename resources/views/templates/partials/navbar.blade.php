@@ -18,6 +18,7 @@
                 <ul class="nav navbar-nav navbar-left">
 
                     <li><a href="{{ route('order.create') }}">Новый заказ</a></li>
+                    <li><a href="">Поиск заказа</a></li>
                     </ul>
             @endif
 

@@ -39,6 +39,6 @@ class CreateActionsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('actions');
     }
 }

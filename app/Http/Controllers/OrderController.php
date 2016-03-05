@@ -21,22 +21,27 @@ class OrderController extends Controller
     {
 
         $this->validate($request, [
-            'customer' => 'required',
-            'email' => 'required'
+            'customer-name' => 'required',
+            'customer-email' => 'required',
+            'order-type' => 'required',
         ]);
 
-        $order = new Order();
-        $order->customer = $request->input('customer');
-        $order->email = $request->input('email');
-        if ($order->save()) {
 
-            $action = new Action();
-            $action->order_id = $order->id;
-            $action->user_id = Auth::user()->id;
-            $action->action_type_id = 1;
-            $action->save();
-        }
 
-        return redirect()->back()->with('info', 'Заказ добавлен');
+
+
+//        $order = new Order();
+//        $order->customer = $request->input('customer');
+//        $order->email = $request->input('email');
+//        if ($order->save()) {
+//
+//            $action = new Action();
+//            $action->order_id = $order->id;
+//            $action->user_id = Auth::user()->id;
+//            $action->action_type_id = 1;
+//            $action->save();
+//        }
+//
+//        return redirect()->back()->with('info', 'Заказ добавлен');
     }
 }

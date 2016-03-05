@@ -21,10 +21,6 @@ class Order extends Model
     }
 
 
-    public static function getOrders(){
-
-        $result = DB::raw();
-    }
 
 
 }

@@ -4,11 +4,14 @@
 
     @if(Auth::check())
 
-@include('templates.partials.table')
+@include('orders.table')
 
         @else
-<h2>HOME PAGE</h2>
-    <h6>hello</h6>
+        <div class="text-center">
+
+<h2>Привет, хорошего рабочего дня:)</h2>
+    <h6>Войдите, чтобы начать работу</h6>
+        </div>
 
         @endif
 

@@ -18,7 +18,7 @@
             <input type="password" class="form-control " id="password" placeholder="Пароль" name="password">
         </fieldset>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary btn-raised">Готово</button>
         <input type="hidden" name="_token" value="{{ Session::token() }}">
     </form>
 
