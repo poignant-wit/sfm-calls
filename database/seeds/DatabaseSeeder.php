@@ -12,5 +12,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+        DB::table('order_types')->insert([
+            ['title' => 'nachitka'],
+            ['title' => 'ivr'],
+            ['title' => 'vo'],
+
+        ]);
     }
 }

@@ -60,10 +60,23 @@
 
             <div class="row">
             <div class="col-md-6">
-        <fieldset class="form-group label-floating {{ $errors->has('password')? ' has-error':'' }}">
-            <label for="order-type" class="control-label">Тип заказа</label>
-            <input type="text" class="form-control " id="order-type" name="order-type">
-        </fieldset>
+
+                <div class="form-group label-floating">
+                    <label for="order-type" class="control-label">Тип заказа</label>
+                    <select class="form-control" name="order-type" title="ORDER TYPES">
+
+
+                            <option class="hidden"></option>
+                        @foreach($order_types as $order_type)
+                            <option value="{{ $order_type->id }}">{{ $order_type->title }}</option>
+                        @endforeach
+                    </select>
+
+
+                </div>
+
+
+
             </div>
                 <div class="col-md-6">
         <fieldset class="form-group label-floating {{ $errors->has('password')? ' has-error':'' }}">
@@ -72,7 +85,6 @@
         </fieldset>
                 </div>
             </div>
-
 
 
     <button type="submit" class="btn btn-primary btn-raised">Добавить</button>

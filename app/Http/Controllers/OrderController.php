@@ -8,12 +8,14 @@ use Illuminate\Support\Facades\Auth;
 use SFMCalls\Http\Requests;
 use SFMCalls\Models\Order;
 use SFMCalls\Models\Action;
+use SFMCalls\Models\OrderType;
 
 class OrderController extends Controller
 {
     public function getCreateOrder()
     {
-        return view('order.order');
+        $order_types = OrderType::all();
+        return view('order.order')->with('order_types', $order_types);
     }
 
 
@@ -23,6 +25,7 @@ class OrderController extends Controller
         $this->validate($request, [
             'customer-name' => 'required',
             'customer-email' => 'required',
+            'password' => 'required',
             'order-type' => 'required',
         ]);
 

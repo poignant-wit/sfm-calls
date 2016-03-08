@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateOrdersTable extends Migration
+class AddOrderTypesToOrdersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class UpdateOrdersTable extends Migration
     public function up()
     {
         Schema::table('orders', function(Blueprint $table){
-            $table->dropColumn('customer');
-            $table->dropColumn('email');
-            $table->integer('customer_id')->unsigned();
-            $table->foreign('customer_id')->references('id')->on('customers');
-
+            $table->integer('order_type_id')->unsigned();
+            $table->foreign('order_type_id')->references('id')->on('order_types');
         });
     }
 
@@ -29,10 +26,8 @@ class UpdateOrdersTable extends Migration
     public function down()
     {
         Schema::table('orders', function(Blueprint $table){
-            $table->dropForeign('orders_customer_id_foreign');
-            $table->dropColumn('customer_id');
-            $table->string('customer');
-            $table->string('email');
+            $table->dropColumn('order_type_id');
+
         });
     }
 }

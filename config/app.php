@@ -155,6 +155,7 @@ return [
         SFMCalls\Providers\AuthServiceProvider::class,
         SFMCalls\Providers\EventServiceProvider::class,
         SFMCalls\Providers\RouteServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 
     ],
 
