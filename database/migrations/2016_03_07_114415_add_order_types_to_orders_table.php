@@ -13,7 +13,7 @@ class AddOrderTypesToOrdersTable extends Migration
     public function up()
     {
         Schema::table('orders', function(Blueprint $table){
-            $table->integer('order_type_id')->unsigned();
+
             $table->foreign('order_type_id')->references('id')->on('order_types');
         });
     }
@@ -26,8 +26,7 @@ class AddOrderTypesToOrdersTable extends Migration
     public function down()
     {
         Schema::table('orders', function(Blueprint $table){
-            $table->dropColumn('order_type_id');
-
+            $table->dropForeign('orders_order_type_id_foreign');
         });
     }
 }

@@ -17,7 +17,7 @@ class CreateActionsTable extends Migration
             $table->integer('order_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->integer('action_type_id')->unsigned();
-            $table->text('comment');
+            $table->text('comment')->nullable();
             $table->timestamps();
 
         });

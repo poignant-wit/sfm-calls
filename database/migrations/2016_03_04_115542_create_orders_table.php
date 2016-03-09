@@ -14,11 +14,16 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function(Blueprint $table){
             $table->increments('id');
-            $table->string('customer');
-            $table->string('email');
+            $table->integer('customer_id')->unsigned();
+            $table->integer('order_type_id')->unsigned();
+            $table->string('comment');
             $table->timestamps();
 
         });
+
+
+
+       // DB::statement('ALTER TABLE orders CHANGE `id` `id` int(10) unsigned ZEROFILL NOT NULL AUTO_INCREMENT');
 
     }
 

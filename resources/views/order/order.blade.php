@@ -18,7 +18,7 @@
             <div class="col-md-6">
                 <fieldset class="form-group label-floating {{ $errors->has('customer-name')? ' has-error':'' }}">
                     {{--<label for="username" class="control-label">Заказчик</label>--}}
-                    <label for="name" class="control-label">Имя</label>
+                    <label for="customer-name" class="control-label">Имя</label>
                     <input type="text" class="form-control" id="customer-name" name="customer-name" value="{{ Request::old('customer-name')?: '' }}">
                     {{--@if($errors->has('username'))--}}
                     {{--<span class="help-block">Введите верный логин</span>--}}
@@ -27,13 +27,14 @@
 
                     {{--<small class="text-muted">We'll never share your email with anyone else.</small>--}}
                 </fieldset>
-                <fieldset class="form-group label-floating {{ $errors->has('password')? ' has-error':'' }}">
+                <fieldset class="form-group label-floating {{ $errors->has('customer-email')? ' has-error':'' }}">
                     <label for="customer-email" class="control-label">Email</label>
                     <input type="email" class="form-control " id="customer-email" name="customer-email">
                 </fieldset>
             </div>
+
             <div class="col-md-6">
-                <fieldset class="form-group label-floating {{ $errors->has('customer')? ' has-error':'' }}">
+                <fieldset class="form-group label-floating {{ $errors->has('customer-telephone')? ' has-error':'' }}">
                     {{--<label for="username" class="control-label">Заказчик</label>--}}
                     <label for="customer-telephone" class="control-label">Телефон</label>
                     <input type="text" class="form-control" id="customer-telephone"
@@ -45,9 +46,9 @@
 
                     {{--<small class="text-muted">We'll never share your email with anyone else.</small>--}}
                 </fieldset>
-                <fieldset class="form-group label-floating {{ $errors->has('password')? ' has-error':'' }}">
+                <fieldset class="form-group label-floating {{ $errors->has('customer-skype')? ' has-error':'' }}">
                     <label for="customer-skype" class="control-label">Skype</label>
-                    <input type="email" class="form-control " id="customer-skype" name="customer-skype">
+                    <input type="text" class="form-control " id="customer-skype" name="customer-skype">
                 </fieldset>
             </div>
         </div>
@@ -79,7 +80,7 @@
 
             </div>
                 <div class="col-md-6">
-        <fieldset class="form-group label-floating {{ $errors->has('password')? ' has-error':'' }}">
+        <fieldset class="form-group label-floating">
             <label for="order-comment" class="control-label">Комментарии</label>
             <textarea class="form-control " id="order-comment" name="order-comment" rows="5"></textarea>
         </fieldset>

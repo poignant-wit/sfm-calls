@@ -75,6 +75,12 @@ Route::group(['middleware' => ['web']], function () {
         'middleware' => ['auth'],
     ]);
 
+    Route::post('/action', [
+        'uses' => 'ActionController@postAddAction',
+        'as' => 'action.add',
+        'middleware' => ['auth'],
+    ]);
+
 
 
 

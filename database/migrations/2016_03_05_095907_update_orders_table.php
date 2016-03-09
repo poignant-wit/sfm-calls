@@ -13,12 +13,12 @@ class UpdateOrdersTable extends Migration
     public function up()
     {
         Schema::table('orders', function(Blueprint $table){
-            $table->dropColumn('customer');
-            $table->dropColumn('email');
-            $table->integer('customer_id')->unsigned();
+
             $table->foreign('customer_id')->references('id')->on('customers');
 
         });
+
+
     }
 
     /**
@@ -30,9 +30,7 @@ class UpdateOrdersTable extends Migration
     {
         Schema::table('orders', function(Blueprint $table){
             $table->dropForeign('orders_customer_id_foreign');
-            $table->dropColumn('customer_id');
-            $table->string('customer');
-            $table->string('email');
+
         });
     }
 }

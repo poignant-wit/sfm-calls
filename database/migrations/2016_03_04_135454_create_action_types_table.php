@@ -15,6 +15,7 @@ class CreateActionTypesTable extends Migration
         Schema::create('action_types', function(Blueprint $table){
             $table->increments('id');
             $table->string('action');
+            $table->string('type');
         });
     }
 

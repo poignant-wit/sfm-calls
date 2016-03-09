@@ -14,7 +14,9 @@ class Action extends Model
 
     protected $table = 'actions';
 
-
+    protected $fillable = [
+        'order_id', 'user_id', 'action_type_id', 'comment'
+    ];
 
 
 }

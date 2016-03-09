@@ -13,10 +13,21 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         DB::table('order_types')->insert([
-            ['title' => 'nachitka'],
-            ['title' => 'ivr'],
-            ['title' => 'vo'],
+            ['title' => 'НАЧИТКА'],
+            ['title' => 'ИВР'],
+            ['title' => 'РАДИОРОЛИК'],
+            ['title' => 'ВИДЕОРОЛИК'],
+            ['title' => 'ДРУГОЙ'],
 
         ]);
+
+        DB::table('action_types')->insert([
+            ['action' => 'Добавлен', 'type' => 'primary'],
+            ['action' => 'Отправлено письмо', 'type' => 'info'],
+            ['action' => 'Сделан телефонный звонок', 'type' => 'info'],
+        ]);
+
+
+
     }
 }

@@ -5,10 +5,12 @@ namespace SFMCalls\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
+use SFMCalls\Models\Customer;
 use SFMCalls\Http\Requests;
 use SFMCalls\Models\Order;
 use SFMCalls\Models\Action;
 use SFMCalls\Models\OrderType;
+use Symfony\Component\Finder\Iterator\CustomFilterIterator;
 
 class OrderController extends Controller
 {
@@ -21,30 +23,30 @@ class OrderController extends Controller
 
     public function postCreateOrder(Request $request)
     {
-
         $this->validate($request, [
             'customer-name' => 'required',
             'customer-email' => 'required',
-            'password' => 'required',
-            'order-type' => 'required',
         ]);
 
+        $customer = new Customer();
+        $customer->name = $request->input('customer-name');
+        $customer->email = $request->input('customer-email');
+        $customer->telephone = $request->input('customer-telephone');
+        $customer->skype = $request->input('customer-skype');
+        $customer->save();
 
+        $order = new Order();
+        $order->customer_id = $customer->id;
+        $order->order_type_id = $request->input('order-type');
+        if ($order->save()) {
 
-
-
-//        $order = new Order();
-//        $order->customer = $request->input('customer');
-//        $order->email = $request->input('email');
-//        if ($order->save()) {
+            $action = new Action();
+            $action->order_id = $order->id;
+            $action->user_id = Auth::user()->id;
+            $action->action_type_id = 1;
+            $action->save();
+        }
 //
-//            $action = new Action();
-//            $action->order_id = $order->id;
-//            $action->user_id = Auth::user()->id;
-//            $action->action_type_id = 1;
-//            $action->save();
-//        }
-//
-//        return redirect()->back()->with('info', 'Заказ добавлен');
+        return redirect()->back()->with('info', 'Заказ ' . sprintf("%06d", $order->id) . ' добавлен');
     }
 }

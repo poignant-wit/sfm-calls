@@ -20,6 +20,8 @@ class CreateUserTable extends Migration
             $table->timestamps();
         });
 
+
+
     }
 
     /**
