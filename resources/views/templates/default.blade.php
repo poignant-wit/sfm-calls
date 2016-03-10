@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap-material-design.min.css">
     <link rel="stylesheet" type="text/css" href="/css/ripples.min.css">
+    {{--<link rel="stylesheet" type="text/css" href="/css/bootflat.min.css">--}}
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
     {{--<link rel="stylesheet" href="/css/bootstrap-theme.min.css">--}}
 </head>
@@ -27,7 +28,7 @@
 <script src="/js/jquery.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/material.min.js"></script>
-{{--<script src="/js/ripples.min.js"></script>--}}
+<script src="/js/ripples.min.js"></script>
 <script src="/js/app.js"></script>
 <script>
     $.material.init()
