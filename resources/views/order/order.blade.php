@@ -56,7 +56,6 @@
 
 
 
-
         <h4 style="margin-top: 40px">Заказ</h4>
 
             <div class="row">

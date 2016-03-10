@@ -44,6 +44,7 @@
                     <th>Дата</th>
                     <th>Заказчик</th>
                     <th>Этап</th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -54,9 +55,10 @@
                         <td>{{ $order->created_date }}</td>
                         <td>{{ $order->customer_name }}</td>
                         <td id="order-action" class="last-action-cell vert-align">
-                            <span class="label label-{{ $order->last_action_type }}"
-                                  data-type="{{ $order->last_action_type }}">{{ $order->last_action }}</span>
+                            <a data-toggle="modal" data-target="#myModal"><span class="label label-{{ $order->last_action_type }}"
+                                  data-type="{{ $order->last_action_type }}">{{ $order->last_action }}</span></a>
                         </td>
+                        <td><button class="btn btn-default btn-xs order-details">ДЕТАЛИ</button></td>
                     </tr>
                 @endforeach
                 </tbody>
@@ -65,6 +67,30 @@
     </div>
     </div>
     </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
 
 
 @stop

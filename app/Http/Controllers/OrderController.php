@@ -44,9 +44,28 @@ class OrderController extends Controller
             $action->order_id = $order->id;
             $action->user_id = Auth::user()->id;
             $action->action_type_id = 1;
+            $action->comment = $request->input('order-comment');
             $action->save();
         }
-//
         return redirect()->back()->with('info', 'Заказ ' . sprintf("%06d", $order->id) . ' добавлен');
     }
+
+
+    public function getOrderDetails($order_id){
+
+//        $actions = Action::where('order_id','=', $order_id)->get();
+        $actions = Action::getActionsWithTitlesAndUsers($order_id);
+        $order = Order::getOrdersWithCustomerDetails($order_id);
+
+
+       // dd($order);
+        return view('orders.details')
+            ->with('actions', $actions)
+            ->with('order', $order)
+            ->with('order_id', $order_id);
+    }
+
+
+
+
 }

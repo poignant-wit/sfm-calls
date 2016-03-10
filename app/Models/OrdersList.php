@@ -21,11 +21,13 @@ class OrdersList
         e.creator,
         e.customer_name,
         e.last_action,
-        e.last_action_type
+        e.last_action_type,
+        e.last_action_id
         FROM
         (SELECT *
         FROM (SELECT
         actions.order_id AS order_id,
+        actions.id as last_action_id,
         b.creator AS creator,
         b.created_date AS created_date,
 

@@ -1,1 +1,14 @@
 
+.list-group .list-group-separator::before{
+    width: calc(100%) !important;
+}
+
+.navbar-brand {
+    padding: 0;
+}
+
+.navbar-brand>img {
+    height: 100%;
+    padding: 15px; /* firefox bug fix */
+    width: auto;
+}

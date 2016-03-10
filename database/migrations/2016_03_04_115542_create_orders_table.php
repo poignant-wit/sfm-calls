@@ -23,7 +23,7 @@ class CreateOrdersTable extends Migration
 
 
 
-       // DB::statement('ALTER TABLE orders CHANGE `id` `id` int(10) unsigned ZEROFILL NOT NULL AUTO_INCREMENT');
+        DB::statement('ALTER TABLE orders CHANGE `id` `id` int(8) unsigned ZEROFILL NOT NULL AUTO_INCREMENT');
 
     }
 

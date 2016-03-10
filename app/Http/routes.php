@@ -81,6 +81,14 @@ Route::group(['middleware' => ['web']], function () {
         'middleware' => ['auth'],
     ]);
 
+    Route::get('/order/{id}', [
+        'uses' => 'OrderController@getOrderDetails',
+        'as' => 'action.add',
+        'middleware' => ['auth'],
+    ]);
+
+
+
 
 
 

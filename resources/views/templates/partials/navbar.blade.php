@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ route('home') }}">SilaFm</a>
+            <a class="navbar-brand" href="{{ route('home') }}"><img  src="http://sila.fm/images/new/audioroliki-radioroliki.gif"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->

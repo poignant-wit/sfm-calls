@@ -24,7 +24,10 @@ class DatabaseSeeder extends Seeder
         DB::table('action_types')->insert([
             ['action' => 'Добавлен', 'type' => 'primary'],
             ['action' => 'Отправлено письмо', 'type' => 'info'],
-            ['action' => 'Сделан телефонный звонок', 'type' => 'info'],
+            ['action' => 'Телефонный звонок', 'type' => 'info'],
+            ['action' => 'Ждем ответа', 'type' => 'warning'],
+            ['action' => 'Выполнен', 'type' => 'success'],
+            ['action' => 'Принят', 'type' => '_'],
         ]);
 
 
