@@ -9,6 +9,7 @@
 namespace SFMCalls\Models;
 
 use DB;
+use Illuminate\Pagination\Paginator;
 
 class OrdersList
 {
@@ -65,9 +66,15 @@ class OrdersList
               FROM orders
                 INNER JOIN customers ON orders.customer_id = customers.id) AS d ON c.order_id = d.id) AS e
                 ORDER BY order_id DESC
+
         ';
 
+
+
+
         $result = DB::select(DB::raw($query));
+
+
         return $result;
     }
 

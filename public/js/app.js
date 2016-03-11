@@ -9,6 +9,9 @@ $(document).ready(function () {
 
         //console.log($(this).attr('id'));
         //console.log(getSelectedRows());
+        console.log('sdfsdf');
+
+
 
         var $action_type = $(this).attr('data-type');
         var $action_type_id = $(this).attr('id');
@@ -27,8 +30,6 @@ $(document).ready(function () {
 
             }
         });
-
-
     });
 
 
@@ -53,8 +54,46 @@ $(document).ready(function () {
         var $id = $(this).closest('tr').find('#order-id').html();
         $(window).attr('location', 'order/' + $id);
 
+    });
 
-    })
+    var availableTags = [
+        "ActionScript",
+        "AppleScript",
+        "Asp",
+        "BASIC",
+        "C",
+        "C++",
+        "Clojure",
+        "COBOL",
+        "ColdFusion",
+        "Erlang",
+        "Fortran",
+        "Groovy",
+        "Haskell",
+        "Java",
+        "JavaScript",
+        "Lisp",
+        "Perl",
+        "PHP",
+        "Python",
+        "Ruby",
+        "Scala",
+        "Scheme"
+    ];
+
+    $('#customer-name').autocomplete({
+        source: availableTags,
+        minlenght: 1,
+        autoFocus: true,
+        lookup: ['January', 'February', 'March'],
+        select: function(e, ui){
+
+        }
+    });
+
+
+
+
 
 
 });

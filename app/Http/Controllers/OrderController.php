@@ -24,12 +24,17 @@ class OrderController extends Controller
     public function postCreateOrder(Request $request)
     {
         $this->validate($request, [
+            'customer-surname' => 'required',
             'customer-name' => 'required',
             'customer-email' => 'required',
         ]);
 
+
+
         $customer = new Customer();
+        $customer->surname = $request->input('customer-surname');
         $customer->name = $request->input('customer-name');
+        $customer->company = $request->input('customer-company');
         $customer->email = $request->input('customer-email');
         $customer->telephone = $request->input('customer-telephone');
         $customer->skype = $request->input('customer-skype');
@@ -53,7 +58,6 @@ class OrderController extends Controller
 
     public function getOrderDetails($order_id){
 
-//        $actions = Action::where('order_id','=', $order_id)->get();
         $actions = Action::getActionsWithTitlesAndUsers($order_id);
         $order = Order::getOrdersWithCustomerDetails($order_id);
 

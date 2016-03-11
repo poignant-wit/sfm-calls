@@ -20,7 +20,6 @@ class ActionController extends Controller
                  $action->save();
              }
          }
-
     }
 
 
